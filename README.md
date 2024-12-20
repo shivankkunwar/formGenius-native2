@@ -32,7 +32,7 @@ A React Native mobile application for creating and managing forms with multiple 
 - npm or yarn
 - React Native development environment setup
 - Android Studio (for Android development)
-- Xcode (for iOS development, macOS only)
+
 
 ## Installation
 
@@ -63,8 +63,7 @@ const API_URL = 'https://formgenius-backend.onrender.com/api';
 
 
 ```shellscript
-# For iOS
-npm run ios
+
 
 # For Android
 npm run android
