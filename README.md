@@ -1,79 +1,173 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-# Getting Started
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+# Form Genius Mobile App  (React Native)
 
-## Step 1: Start the Metro Server
+A React Native mobile application for creating and managing forms with multiple question types, image support, and response collection.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+![formgenius1](https://github.com/user-attachments/assets/dda36ab5-c826-4034-88bd-383cf62719e7)
+![formgenius2](https://github.com/user-attachments/assets/648dfcb3-c9b8-47e3-9c3a-c123cbca80c6)
+## Features
 
-To start Metro, run the following command from the _root_ of your React Native project:
+- 🎨 Modern UI with React Native Paper
+- 📝 Multiple question types support
+- 🖼️ Image upload capability
+- 🔐 Secure authentication
+- 📊 Response management
+- 🔄 Offline support
+- 🎯 TypeScript integration
 
+## Tech Stack
+
+- React Native
+- TypeScript
+- React Navigation
+- React Native Paper
+- Axios
+- AsyncStorage
+- React Native Image Picker
+
+## Prerequisites
+
+- Node.js (v14 or later)
+- npm or yarn
+- React Native development environment setup
+- Android Studio (for Android development)
+- Xcode (for iOS development, macOS only)
+
+## Installation
+
+1. Clone the repository:
 ```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
+git clone https://github.com/shivankkunwar/formGenius-native2.git
+cd form-builder-mobile
 ```
 
-## Step 2: Start your Application
+2. Install dependencies:
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
 
-### For Android
-
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
+```shellscript
+npm install
 ```
 
-### For iOS
 
-```bash
-# using npm
+
+3. Update API configuration:
+Navigate to `src/services/api.ts` and update the API URL:
+
+
+```typescript
+const API_URL = 'https://formgenius-backend.onrender.com/api';
+```
+
+4. Start the application:
+
+
+```shellscript
+# For iOS
 npm run ios
 
-# OR using Yarn
-yarn ios
+# For Android
+npm run android
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+## Project Structure
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+```plaintext
+src/
+├── components/
+│   ├── FormBuilder/
+│   │   ├── QuestionTypes/
+│   │   │   ├── TextQuestion.tsx
+│   │   │   ├── CheckboxQuestion.tsx
+│   │   │   └── GridQuestion.tsx
+│   │   └── FormHeader.tsx
+│   └── common/
+│       ├── LoadingSpinner.tsx
+│       └── ErrorMessage.tsx
+├── screens/
+│   ├── AuthScreen.tsx
+│   ├── HomeScreen.tsx
+│   ├── FormEditorScreen.tsx
+│   └── PreviewScreen.tsx
+├── services/
+│   ├── api.ts
+│   └── auth.ts
+├── types/
+│   └── index.ts
+└── utils/
+    └── storage.ts
+```
 
-## Step 3: Modifying your App
+## Features in Detail
 
-Now that you have successfully run the app, let's modify it.
+### Authentication
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+- User registration
+- Login with email and password
+- Secure token storage
+- Auto login
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
 
-## Congratulations! :tada:
+### Form Management
 
-You've successfully run and modified your React Native App. :partying_face:
+- Create new forms
+- Edit existing forms
+- Delete forms
+- Preview forms
+- Share forms
 
-### Now what?
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+### Question Types
 
-# Troubleshooting
+1. Text Input
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+1. Short answer
+2. Long answer
+3. Required/Optional toggle
 
-# Learn More
 
-To learn more about React Native, take a look at the following resources:
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+2. Checkbox
+
+1. Multiple options
+2. Custom option text
+3. Add/Remove options
+4. Required/Optional toggle
+
+
+
+3. Grid
+
+1. Custom rows and columns
+2. Radio button selection
+3. Required/Optional toggle
+
+
+
+
+
+### Image Support
+
+- Form header images
+- Image upload integration
+- Image preview
+- Image compression
+
+
+### Response Management
+
+- Submit responses
+- View responses
+- Response statistics
+- Export functionality (coming soon)
+
+
+## Styling
+
+The application uses React Native Paper for consistent styling and theming. Custom themes can be configured in `src/constants/theme.ts`.
+
+## State Management
+
+- Local state with React hooks
+- AsyncStorage for persistence
+- Context for global state (authentication)
